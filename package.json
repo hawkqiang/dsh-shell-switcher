@@ -1,0 +1,55 @@
+{
+  "name": "@local/dsh-shell-switcher",
+  "version": "2.1.3",
+  "private": true,
+  "type": "module",
+  "description": "DSH plugin: pick the shell backend from Settings → General — Windows PowerShell, Linux bash, unconfined Android bash, macOS bash.",
+  "license": "MIT",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "client.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "index.js",
+    "locale/*.json"
+  ],
+  "engines": {
+    "dsh": ">=0.2.2-rc.5 <0.3.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hawkqiang/dsh-shell-switcher.git"
+  },
+  "homepage": "https://github.com/hawkqiang/dsh-shell-switcher#readme",
+  "bugs": {
+    "url": "https://github.com/hawkqiang/dsh-shell-switcher/issues"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "shell",
+    "sandbox",
+    "termux",
+    "android"
+  ]
+}

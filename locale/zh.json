@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Shell 平台",
+    "description": "在“设置 → 通用”里选择这个 profile 运行命令所用的 shell 后端：Windows 的 PowerShell、Linux 的 bash、Android 上不受沙箱约束的 bash，或 macOS 的 bash。"
+  }
+}

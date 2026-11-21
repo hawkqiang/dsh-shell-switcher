@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Shell platform",
+    "description": "Choose in Settings → General which shell backend this profile runs commands with: Windows PowerShell, Linux bash, unconfined Android bash, or macOS bash."
+  }
+}

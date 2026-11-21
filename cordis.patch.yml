@@ -1,0 +1,21 @@
+# shell-platform bundle patch layer.
+#
+# The shipped composition pins one executor and one tool per host platform.
+# This bundle owns both instead, so it disables those four rows and inserts the
+# switcher; the switcher mounts the selected platform's pair at apply time.
+- id: bash-sandbox
+  disabled: true
+- id: pwsh-sandbox
+  disabled: true
+- id: tool-bash
+  disabled: true
+- id: tool-pwsh
+  disabled: true
+
+- insert:
+    - id: shell-platform
+      name: '@local/dsh-shell-switcher'
+      config:
+        # `auto` follows the host: Windows → windows, macOS → macos,
+        # Android (including Termux with a glibc Node) → android, else linux.
+        platform: auto
